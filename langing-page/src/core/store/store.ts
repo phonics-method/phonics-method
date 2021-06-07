@@ -13,7 +13,7 @@ type Reducer<ALL_STATE, ALL_EVENT> = (
 ) => ALL_STATE[keyof ALL_STATE];
 
 type ReducerObject<ALL_STATE extends Record<string, any>, ALL_EVENT> = {
-  [k: keyof ALL_STATE]: Reducer<ALL_STATE, ALL_EVENT>;
+  [k: string/*keyof ALL_STATE*/]: Reducer<ALL_STATE, ALL_EVENT>;
 }
 
 export const createCoreStore =

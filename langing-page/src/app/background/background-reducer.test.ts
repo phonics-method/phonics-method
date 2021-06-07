@@ -57,3 +57,18 @@ test('downsizing', () => {
   expect(state.gameOfLifePrev[0]).toEqual(1);
   expect(state.bitmap[15]).toEqual(0);
 });
+
+test.skip('init cells', () => {
+  const initialState = {
+    size: [10, 10],
+    gameOfLife: new Uint8Array(10 * 10),
+    gameOfLifePrev: new Uint8Array(10 * 10),
+    bitmap: new Uint32Array(),
+  };
+  const event = {
+    type: 'BACKGROUND_CELLS_INIT',
+  }
+  const state = backgroundReducer(initialState, event);
+  expect(state.gameOfLife.some(e => e === 1)).toBe(true);
+  expect(state.gameOfLife.every(e => e === 1 || e === 0)).toBe(true);
+});
