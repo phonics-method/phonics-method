@@ -1,0 +1,80 @@
+:root {
+  --main-color-background: #222222;
+  --main-color-text: #ffffff;
+  --main-color-purple: #9b5de5;
+  --main-color-red: #f15bb5;
+  --main-color-yellow: #fee440;
+  --main-color-blue: #00bbf9;
+  --main-color-green: #00f5d4;
+  --main-font-size: 1em;
+  --main-line-height: 1.4;
+}
+
+html {
+  background: var(--main-color-background);
+  color: var(--main-color-text);
+  font-size: var(--main-font-size);
+  line-height: var(--main-line-height);
+}
+
+::selection {
+  background: var(--main-color-yellow);
+  color: var(--main-color-background);
+  text-shadow: none;
+}
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+  vertical-align: middle;
+}
+
+textarea {
+  resize: vertical;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+/*
+ * Hide only visually, but have it available for screen readers:
+ * https://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+ *
+ * 1. For long content, line feeds are not interpreted as spaces and small width
+ *    causes content to wrap 1 word per line:
+ *    https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe
+ */
+
+.sr-only {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  /* 1 */
+}
+
+/*
+ * Extends the .sr-only class to allow the element
+ * to be focusable when navigated to via the keyboard:
+ * https://www.drupal.org/node/897638
+ */
+
+.sr-only.focusable:active,
+.sr-only.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  white-space: inherit;
+  width: auto;
+}

@@ -1,1 +1,3 @@
-# phonics-method
+# talk2machine
+
+Monorepo
