@@ -25,16 +25,55 @@
     <meta name="msapplication-TileColor" content="#222222">
   </head>
   <body>
-    <p>talk2machine</p>
+    <header data-test-id="main-header">
+      <nav>
+        <ul>
+          <li>
+            <a href="/">
+              <img
+                src="image/logo-white.svg"
+                alt="talk2machine"
+              />
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main data-test-id="main-content">
+      cta
+    </main>
+
+    <dialog data-test-id="privacy-consent-dialog">
+      <a
+        href="/privacy-policy.html"
+        data-test-id="privacy-consent-dialog__privacy-link"
+      >Privacy policy</a>
+    </dialog>
+    <footer data-test-id="main-footer">
+      <ul>
+        <li>
+          <a
+            href="/privacy-policy.html"
+            data-test-id="main-footer__privacy-link"
+            >Privacy Policy</a>
+        </li>
+      </ul>
+    </footer>
+
     <script src="js/main.js"></script>
+    <script>
+      if (document.cookie.length === 0) {
+        document.querySelector('dialog').showModal()
+      }
+    </script>
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-C495PBS0EE"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+ //     gtag('js', new Date());
 
-      gtag('config', 'G-C495PBS0EE');
+//      gtag('config', 'G-C495PBS0EE');
     </script>
-  </body>
+     </body>
 </html>
