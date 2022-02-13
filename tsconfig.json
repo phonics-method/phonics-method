@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "esModuleInterop": true,
+    "strict": true,
+    "jsx": "react",
+    "baseUrl": ".",
+    "paths": {
+      "@config/*"; ["config/*"]
+    }
+  }
+}
