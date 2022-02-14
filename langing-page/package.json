@@ -1,45 +1,33 @@
 {
-  "name": "langing-page",
+  "name": "talk2machine",
   "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "@reduxjs/toolkit": "^1.5.1",
-    "@testing-library/jest-dom": "^5.11.4",
-    "@testing-library/react": "^11.1.0",
-    "@testing-library/user-event": "^12.1.10",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-scripts": "4.0.3",
-    "rxjs": "^7.1.0",
-    "web-vitals": "^1.0.1"
-  },
+  "description": "Helping people to learn how to use computers like a pro",
+  "main": "index.js",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "test": "cypress run"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/talk2machine/talk2machine.git"
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "author": "Tamas Kokeny <tamas.kokeny.87@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/talk2machine/talk2machine/issues"
   },
+  "homepage": "https://github.com/talk2machine/talk2machine#readme",
   "devDependencies": {
-    "jest-canvas-mock": "^2.3.1",
-    "rxjs-marbles": "^7.0.0",
-    "typescript": "^4.2.4"
+    "@typescript-eslint/eslint-plugin": "^4.33.0",
+    "cypress": "^9.4.1",
+    "cypress-cucumber-preprocessor": "^4.3.1",
+    "eslint": "^7.32.0",
+    "eslint-config-standard-with-typescript": "^21.0.1",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^5.2.0",
+    "typescript": "^4.5.5"
+  },
+  "cypress-cucumber-preprocessor": {
+    "nonGlobalStepDefinitions": true
   }
 }
