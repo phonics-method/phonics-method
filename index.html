@@ -225,6 +225,9 @@
                     </div>
                     <ul class="footer-links list-reset">
                         <li>
+                            <span style="cursor: pointer;" class="cookie-open">Cookie Settings</span>
+                        </li>
+                        <li>
                             <a href="/privacy-policy.html">Privacy Policy</a>
                         </li>
                         <li>
@@ -241,6 +244,22 @@
             </div>
         </footer>
     </div>
+        <div class="consent-bg" style="position: fixed; background: rgba(0,0,0, 0.3); width: 100vw; height: 100vh; top: 0; left: 0;"></div>
+        <div class="consent" style="padding: 2em; position: fixed; bottom: 0; background: #ffffff; width: 100vw; left: 0;">
+          <h2>Hello there</h2>
+          <p>
+            We use cookies to improve your experience on our site and to learn
+            how people using the site, to be able to polish up our services.
+          </p>
+          <p>
+            Find more information in our
+            <a href="/privacy-policy.html">Privacy Policy</a>
+          </p>
+          <div>
+            <span class="button button-primary cookie-accpet">Accept Cookies</span>
+            <span class="button cookie-decline">Decline</span>
+          </div>
+        </div>
     <script>
       function submit(answer) {
         answer = encodeURIComponent(answer)
@@ -266,15 +285,45 @@
         submit(value)
       })
     </script>
-
+    <style>
+      .hidden { display: none; }
+    </style>
     <script src="dist/js/main.min.js"></script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-C495PBS0EE"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+      if (document.cookie.length) {
+        close();
+        const consentCookie = document.cookie.split(';').find(c => c.includes('PRIVACY_CONSENT'))
+        console.log(JSON.parse(consentCookie.split('=')[1])['GOOGLE_ANALYTICS'])
+        if (consentCookie && JSON.parse(consentCookie.split('=')[1])['GOOGLE_ANALYTICS']) {
+          measure();
+        }
+      }
+      document.querySelector('.cookie-accpet').addEventListener('click', () => {
+        close();
+        document.cookie = `PRIVACY_CONSENT=${decodeURIComponent(JSON.stringify({ GOOGLE_ANALYTICS: true, HOTJAR: true }))}`
+        measure();
+      })
+      document.querySelector('.cookie-decline').addEventListener('click', () => {
+        close();
+        document.cookie = `PRIVACY_CONSENT=${decodeURIComponent(JSON.stringify({ GOOGLE_ANALYTICS: false, HOTJAR: false }))}`
+      })
+      document.querySelector('.cookie-open').addEventListener('click', () => {
+        document.querySelector('.consent').classList.remove('hidden')
+        document.querySelector('.consent-bg').classList.remove('hidden')
+      })
+      function close() {
+        document.querySelector('.consent').classList.add('hidden')
+        document.querySelector('.consent-bg').classList.add('hidden')
+      }
+      function measure() {
+              console.log('measure');
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
 
-      gtag('config', 'G-C495PBS0EE');
+        gtag('config', 'G-C495PBS0EE');
+      }
     </script>
 
 </body>
