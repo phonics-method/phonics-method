@@ -1,0 +1,4 @@
+lecture/**/*.mov filter=lfs diff=lfs merge=lfs -text
+lecture/**/*.mp4 filter=lfs diff=lfs merge=lfs -text
+lecture/**/*.mp3 filter=lfs diff=lfs merge=lfs -text
+lecture/**/*.mkv filter=lfs diff=lfs merge=lfs -text
