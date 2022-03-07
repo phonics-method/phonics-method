@@ -1,0 +1,72 @@
+script:
+  - teacher:
+      content:
+        - Websites you can't live without № 2!
+      recorded: true
+  - screenRecording:
+      content:
+        - In the browser, type ismycomputeron.com (reading the URL out loud)
+      recorded: true
+  - student:
+      content:
+        - When is this useful?
+      recorded: true
+  - teacher:
+      content:
+        - When you need a substitute for your eye chart.
+  - teacherScene:
+      content:
+        - (Showing the screen)
+        - Now with the left, please!
+      recorded: true
+  - teacherScene:
+      content:
+        - Y - E - S
+      recorded: true
+  - animation:
+      content:
+        - Expanding brain meme
+      recorded: true
+  - teacher:
+      content:
+        - When your keyboard is broken, and you only need a few letters
+      recorded: true
+  - screenRecording:
+      content:
+        - (Type the answer)
+        - What did the doctor check?
+        - EYES
+      recorded: true
+  - animation:
+      content:
+        - Expanding brain meme
+      recorded: true
+  - teacher:
+      content:
+        - When you are not a hundred percent sure that your computer is on
+      recorded: true
+  - teacherScene:
+      content:
+        - (Sitting next to the computer)
+        - Hmm.
+        - It emits light
+        - I can hear some noise
+        - Let's make sure...
+      recorded: true
+  - animation:
+      content:
+        - Expanding brain meme
+      recorded: true
+tiktok:
+  description: >
+    Websites you can't live without: ismycomputeron.com / Music: Closer -
+    Staticinverona #coding #learntocode #programmerhumor #websitesyouneed
+  title: >
+    Websites you can't live without #2
+youtube:
+  description: |
+    #shorts
+    Site: https://ismycomputeron.com/
+    Music: Closer (instrumental) - Staticinverona
+  title: >
+    Websites you can't live without #2
