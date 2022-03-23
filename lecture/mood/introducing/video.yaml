@@ -1,0 +1,42 @@
+script:
+  - teacher-scene:
+      name: prepare
+      content:
+        - beanie grab
+        - beanie on head
+        - switch on keyboard
+        - piano sleeve adjust
+        - epic bass drum sound
+      recorded: true
+  - teacher-scene:
+      name: keyboard-playing
+      content:
+        - play keyboard
+        - 7th Element - Vitas
+      recorded: true
+tiktok:
+  description: >
+    Introducing Talk2Machine / Music: 7th Element - Vitas #coding #learntocode
+    #talk2machine #learn2code #programming #learntoprogram
+  title: >
+    Introducing talk2machine
+  link: https://www.tiktok.com/@talk2machine/video/7061621104363851014
+youtube:
+  description: |
+    #shorts
+    Music: 7th element - Vitas
+  title: >
+    Introducing talk2machine
+  link: https://www.youtube.com/watch?v=rm4JV15FkM8
+imgur:
+  description: |
+    Music: 7th element - Vitas
+
+    https://www.tiktok.com/@talk2machine/
+  title: >
+    Introducing talk2machine
+  tags:
+    - programmerhumor
+    - coding
+    - programming
+  link: https://imgur.com/gallery/PnaRtvO
