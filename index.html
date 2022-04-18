@@ -8,6 +8,7 @@
     <link href="https://fonts.googleapis.com/css?family=Lato:400,400i|Roboto:500" rel="stylesheet">
     <link rel="stylesheet" href="dist/css/style.css">
     <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
+    <script type="text/javascript" src="https://www.datadoghq-browser-agent.com/datadog-logs-v4.js"></script>
 </head>
 <body class="is-boxed has-animations">
     <div class="body-wrap boxed-container">
@@ -261,6 +262,14 @@
           </div>
         </div>
     <script>
+        window.DD_LOGS &&
+          DD_LOGS.init({
+            clientToken: '2dbce3922e3a88c02e26b84eac167b6',
+            site: 'datadoghq.eu',
+            forwardErrorsToLogs: true,
+            sampleRate: 100,
+          })
+      DD_LOGS.logger.info('page-load', { path: '/', localTime: (new Date).toISOString() })
       function submit(answer) {
         answer = encodeURIComponent(answer)
 
