@@ -262,14 +262,7 @@
           </div>
         </div>
     <script>
-        window.DD_LOGS &&
-          DD_LOGS.init({
-            clientToken: '2dbce3922e3a88c02e26b84eac167b6',
-            site: 'datadoghq.eu',
-            forwardErrorsToLogs: true,
-            sampleRate: 100,
-          })
-      DD_LOGS.logger.info('page-load', { path: '/', localTime: (new Date).toISOString() })
+      let isMeasure = false;
       function submit(answer) {
         answer = encodeURIComponent(answer)
 
@@ -292,6 +285,9 @@
         const value = document.querySelector('.email-input').value
         document.querySelector('.email-input').value = ''
         submit(value)
+        if (isMeasure) {
+          DD_LOGS.logger.info('email-submit', { path: '/', localTime: (new Date).toISOString() })
+        }
       })
     </script>
     <style>
@@ -326,12 +322,19 @@
         document.querySelector('.consent-bg').classList.add('hidden')
       }
       function measure() {
-              console.log('measure');
+        isMeasure = true
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-
         gtag('config', 'G-C495PBS0EE');
+        window.DD_LOGS &&
+          DD_LOGS.init({
+            clientToken: 'pub1b92a6632f1f262b589eaaad6ac0705f',
+            site: 'datadoghq.eu',
+            forwardErrorsToLogs: true,
+            sampleRate: 100,
+          })
+        DD_LOGS.logger.info('page-load', { path: '/', localTime: (new Date).toISOString() })
       }
     </script>
 
